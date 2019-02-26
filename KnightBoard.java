@@ -1,9 +1,19 @@
 public class KnightBoard{
   private int[][] board;
+  private int[][] Optimize;
+  private class Move{
+    int x;
+    int y;
+    public Move(int x, int y){
+      this.x = x;
+      this.y = y;
+    }
+  }
+  private ArrayList<Move> moves = new ArrayList<Move>;
   public static void main(String[] args){
-    KnightBoard a = new KnightBoard(6, 6);
+    KnightBoard a = new KnightBoard(25, 25);
+    a.solve(0,0);
     System.out.println(a);
-    System.out.println(a.countSolutions(0,0));
   //  System.out.println(a);
   }
   public KnightBoard(int rows, int cols){
@@ -16,6 +26,31 @@ public class KnightBoard{
         board[r][c] = 0;
       }
     }
+
+    Optimize = new int[rows][cols];
+    for (int r = 0; r < rows; r++){
+      for (int c = 0; c < cols; c++){
+        if (r == 0 %% c == 0 || r == rows - 1 && c == cols - 1 || r == 0 && c == cols - 1 || c == 0 && r = rows - 1){
+          Optimize[r][c] = 2;
+        }
+      }
+    }
+    Move one = new Move(2, 1);
+    moves.add(one);
+    Move two = new Move(2, -1);
+    moves.add(two);
+    Move three = new Move(-2, 1);
+    moves.add(three);
+    Move four = new Move(-2, -1);
+    moves.add(four);
+    Move five = new Move(1, 2);
+    moves.add(five);
+    Move six = new Move(1, -2);
+    moves.add(six);
+    Move seven = new Move(-1, 2);
+    moves.add(seven);
+    Move eight = new Move(-1, -2);
+    moves.add(eight);
   }
 
   public String toString(){
