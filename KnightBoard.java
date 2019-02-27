@@ -215,7 +215,7 @@ public class KnightBoard{
         }
       }
       remove(row,col);
-      System.out.println("nope");
+    //  System.out.println("nope");
       return false;
     }
 
