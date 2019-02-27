@@ -36,10 +36,11 @@ public class KnightBoard{
   }
   private ArrayList<Move> moves = new ArrayList<Move>();
   public static void main(String[] args){
-    KnightBoard a = new KnightBoard(35, 35);
-    //a.solve(0,0);
+    KnightBoard a = new KnightBoard(60, 60);
+//a.solve(0,0);
     //System.out.println(a.OpToString());
     System.out.println(a.solve(0,0));
+    System.out.println(a);
   }
   public KnightBoard(int rows, int cols){
     if (rows <= 0 || cols <= 0){
@@ -104,8 +105,10 @@ public class KnightBoard{
     for (int i = 0; i < board.length; i++){
       for (int j = 0; j < board[0].length; j++){
         if (board[i][j] % 10 == board[i][j]){
-          result += "   " + board[i][j];
+          result += "    " + board[i][j];
         } else if (board[i][j] % 100 == board[i][j]){
+          result += "   " + board[i][j];
+        } else if (board[i][j] % 1000 == board[i][j]){
           result += "  " + board[i][j];
         } else {
           result += " " + board[i][j];
